@@ -15,6 +15,8 @@ def main(ctx):
   return [
     linux_cxx("tests", "g++", packages="docbook docbook-xml docbook-xsl python3-jinja2 python3-pytest xsltproc libsaxonhe-java default-jre-headless flex libfl-dev bison unzip rsync", buildtype="test", buildscript="drone", image=linuxglobalimage, globalenv=globalenv),
     linux_cxx("examples", "g++", packages="docbook docbook-xml docbook-xsl python3-jinja2 python3-pytest xsltproc libsaxonhe-java default-jre-headless flex libfl-dev bison unzip rsync", buildtype="example", buildscript="drone", image=linuxglobalimage, globalenv=globalenv),
+    linux_cxx("tests python3.13", "g++", packages="docbook docbook-xml docbook-xsl python3-jinja2 python3-pytest xsltproc libsaxonhe-java default-jre-headless flex libfl-dev bison unzip rsync", buildtype="test", buildscript="drone", image="cppalliance/droneubuntu2410:1", globalenv=globalenv),
+    linux_cxx("examples python3.13", "g++", packages="docbook docbook-xml docbook-xsl python3-jinja2 python3-pytest xsltproc libsaxonhe-java default-jre-headless flex libfl-dev bison unzip rsync", buildtype="example", buildscript="drone", image="cppalliance/droneubuntu2410:1", globalenv=globalenv),
   ]
 
 # from https://github.com/boostorg/boost-ci
